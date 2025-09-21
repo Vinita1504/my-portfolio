@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Theme - Beige Based */
+    --background: 41 25% 95%; /* beige-100 */
+    --foreground: 216 50% 25%; /* yale-800 */
+    
+    /* Card System */
+    --card: 41 33% 98%; /* beige-50 */
+    --card-foreground: 216 50% 25%; /* yale-800 */
+    
+    /* Popover System */
+    --popover: 41 33% 98%; /* beige-50 */
+    --popover-foreground: 216 50% 25%; /* yale-800 */
+    
+    /* Primary - Yale Blue */
+    --primary: 216 60% 42%; /* yale-500 */
+    --primary-foreground: 41 33% 98%; /* beige-50 */
+    
+    /* Secondary - Beige */
+    --secondary: 41 25% 85%; /* beige-400 */
+    --secondary-foreground: 216 50% 25%; /* yale-800 */
+    
+    /* Tertiary - Naples Yellow */
+    --tertiary: 51 89% 67%; /* naples-500 */
+    --tertiary-foreground: 216 50% 25%; /* yale-800 */
+    
+    /* Muted Colors */
+    --muted: 41 25% 90%; /* beige-300 */
+    --muted-foreground: 216 30% 45%; /* yale-600 */
+    
+    /* Accent - Naples Yellow */
+    --accent: 51 89% 67%; /* naples-500 */
+    --accent-foreground: 216 50% 25%; /* yale-800 */
+    
+    /* System Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 41 33% 98%;
+    --border: 41 25% 85%; /* beige-400 */
+    --input: 41 25% 90%; /* beige-300 */
+    --ring: 216 60% 42%; /* yale-500 */
+    
+    /* Chart Colors */
+    --chart-1: 216 60% 42%; /* yale-500 */
+    --chart-2: 51 89% 67%; /* naples-500 */
+    --chart-3: 160 84% 39%; /* emerald-600 */
+    --chart-4: 41 25% 70%; /* beige-700 */
+    --chart-5: 216 30% 60%; /* yale-400 */
+    
+    --radius: 0.5rem;
+  }
+  
+  .dark {
+    /* Dark Theme - Yale Blue Based */
+    --background: 216 65% 8%; /* yale-950 */
+    --foreground: 41 25% 95%; /* beige-100 */
+    
+    /* Card System */
+    --card: 216 55% 12%; /* yale-900 */
+    --card-foreground: 41 25% 95%; /* beige-100 */
+    
+    /* Popover System */
+    --popover: 216 55% 12%; /* yale-900 */
+    --popover-foreground: 41 25% 95%; /* beige-100 */
+    
+    /* Primary - Yale Blue (lighter in dark) */
+    --primary: 216 50% 65%; /* yale-400 */
+    --primary-foreground: 216 65% 8%; /* yale-950 */
+    
+    /* Secondary - Beige (darker in dark) */
+    --secondary: 216 45% 18%; /* yale-800 */
+    --secondary-foreground: 41 25% 95%; /* beige-100 */
+    
+    /* Tertiary - Naples Yellow (adjusted for dark) */
+    --tertiary: 51 85% 60%; /* naples-400 */
+    --tertiary-foreground: 216 65% 8%; /* yale-950 */
+    
+    /* Muted Colors */
+    --muted: 216 45% 18%; /* yale-800 */
+    --muted-foreground: 41 20% 75%; /* beige-600 */
+    
+    /* Accent - Naples Yellow */
+    --accent: 51 85% 60%; /* naples-400 */
+    --accent-foreground: 216 65% 8%; /* yale-950 */
+    
+    /* System Colors */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 41 25% 95%;
+    --border: 216 45% 18%; /* yale-800 */
+    --input: 216 45% 18%; /* yale-800 */
+    --ring: 216 50% 65%; /* yale-400 */
+    
+    /* Chart Colors */
+    --chart-1: 216 50% 65%; /* yale-400 */
+    --chart-2: 51 85% 60%; /* naples-400 */
+    --chart-3: 160 84% 39%; /* emerald-600 */
+    --chart-4: 41 20% 65%; /* beige-700 */
+    --chart-5: 216 40% 55%; /* yale-500 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Smooth transitions for theme switching */
+  * {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent));
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom button hover effects */
+.btn-glow:hover {
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .ml-80 {
+    margin-left: 0;
+  }
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .fixed {
+    position: static;
+  }
+  
+  .w-80 {
+    width: 100%;
+    height: auto;
+  }
+  
+  .ml-80 {
+    margin-left: 0;
+  }
+}
+
+/* Focus states for accessibility */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Loading animations */
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}
