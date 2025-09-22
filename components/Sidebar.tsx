@@ -12,7 +12,6 @@ interface SidebarProps {
 
 const navigation = [
   { id: 'home', label: 'Home', icon: User, href: '/' },
-  { id: 'about', label: 'About', icon: User, href: '/about' },
   { id: 'skills', label: 'Skills', icon: Code, href: '/skills' },
   { id: 'projects', label: 'Projects', icon: FolderOpen, href: '/projects' },
   { id: 'experience', label: 'Experience', icon: Briefcase, href: '/experience' },

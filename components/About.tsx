@@ -18,10 +18,10 @@ export default function About() {
   }, []);
 
   const stats = [
-    { icon: Rocket, label: 'Projects Completed', value: '50+' },
-    { icon: Coffee, label: 'Cups of Coffee', value: '1000+' },
-    { icon: Calendar, label: 'Years Experience', value: '5+' },
-    { icon: MapPin, label: 'Happy Clients', value: '30+' },
+    { icon: Rocket, label: 'Projects Completed', value: '10+' },
+    { icon: Coffee, label: 'Cups of Coffee', value: '500+' },
+    { icon: Calendar, label: 'Years Experience', value: '3+' },
+    { icon: MapPin, label: 'Happy Clients', value: '15+' },
   ];
 
   return (
@@ -36,18 +36,19 @@ export default function About() {
           {/* Content */}
           <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              I'm ViNiTa BhArTi, a passionate full-stack developer with over 5 years of experience crafting 
-              beautiful, functional digital experiences. I specialize in building scalable 
-              SaaS applications with modern technologies and clean, intuitive user interfaces.
+              I'm Vinita Bharti, a passionate Fullstack Developer and Flutter developer with over 3 years of experience crafting 
+              beautiful, functional digital experiences. I specialize in building scalable web applications, 
+              mobile apps, and e-commerce platforms with modern technologies and clean, intuitive user interfaces.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+              I've successfully delivered projects like <strong>dpbazaar.in</strong>, <strong>uidmt.com</strong>, 
+              <strong>hamaraticket.com</strong>, <strong>veliciae</strong> (jewelry e-commerce), and <strong>2gather</strong>. 
               When I'm not coding, you'll find me exploring new technologies, contributing to 
-              open-source projects, or sharing my knowledge with the developer community through 
-              blog posts and speaking engagements. I love creating solutions that make a real impact.
+              open-source projects, or sharing my knowledge with the developer community.
             </p>
             
             <div className="flex flex-wrap gap-3 mb-8">
-              {['React', 'Next.js', 'TypeScript', 'Node.js', 'Python', 'AWS'].map((skill) => (
+              {['React', 'Next.js', 'TypeScript', 'Node.js', 'Flutter', 'Dart', 'Python', 'AWS', 'MongoDB', 'PostgreSQL'].map((skill) => (
                 <Badge key={skill} variant="secondary" className="bg-secondary text-secondary-foreground hover:bg-primary/20">
                   {skill}
                 </Badge>
