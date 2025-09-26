@@ -30,7 +30,7 @@ export default function Sidebar({ activeSection }: SidebarProps) {
   const currentSection = getActiveSection();
 
   return (
-    <div className="fixed left-0 top-0 h-screen w-80 bg-background/95 backdrop-blur-xl border-r border-border z-50">
+    <div className="h-screen w-80 bg-background/95 backdrop-blur-xl border-r border-border">
       <div className="flex flex-col h-full p-8">
         {/* Profile Section */}
         <div className="text-center mb-8 relative">
@@ -38,11 +38,11 @@ export default function Sidebar({ activeSection }: SidebarProps) {
           {/* <div className="absolute top-0 right-0">
             <ThemeToggle />
           </div>
-           */}
+          */}
           <div className="relative w-24 h-24 mx-auto mb-4">
             <Image
               src="/vinita.jpeg"
-              alt="ViNiTa BhArTi - Profile"
+              alt="Vinita Bharti - Profile"
               fill
               className="rounded-full object-cover border-4 border-primary/30 shadow-xl"
             />

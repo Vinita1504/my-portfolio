@@ -39,17 +39,17 @@ export default function Hero() {
   ];
 
   return (
-    <InteractiveBackground className="relative min-h-screen overflow-hidden">
-      <div className="relative z-10 flex flex-col justify-center items-center min-h-screen px-8">
+    <InteractiveBackground className="relative  h-max overflow-hidden">
+      <div className="relative z-10 flex flex-col justify-center items-center  h-max px-4  pt-20  sm:px-8">
         {/* Intro Text */}
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-muted-foreground text-sm mb-2 text-center">Hi, My name is Vinita</p>
+          <p className="text-muted-foreground text-base sm:text-lg md:text-xl mb-4 sm:mb-6 text-center">Hi, My name is Vinita</p>
         </div>
 
         {/* Main Heading */}
         <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h1 
-            className="text-3xl md:text-4xl font-bold text-foreground text-center mb-12 leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-4xl font-bold text-foreground text-center mb-12 sm:mb-16 md:mb-20 leading-tight px-4"
             style={{ transform: `scale(${scale})` }}
           >
             Crafting Digital Interfaces<br />
@@ -65,7 +65,7 @@ export default function Hero() {
         </div>
 
         {/* Portrait with Floating Tags and Overlay Social Section */}
-        <div className={`relative mb-12 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+        <div className={`relative mb-16 sm:mb-20 md:mb-24 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
           <Tilt
             tiltMaxAngleX={15}
             tiltMaxAngleY={15}
@@ -76,7 +76,7 @@ export default function Hero() {
           >
             <div style={{ transform: `scale(${scale})` }}>
             <div 
-              className="relative w-96 h-96 mx-auto"
+              className="relative w-80 h-80 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] lg:w-96 lg:h-96 mx-auto"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
@@ -89,21 +89,21 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent rounded-3xl"></div>
             </div>
 
-            {/* Floating Skill Tags */}
+            {/* Floating Skill Tags - Visible on all screens */}
             {skillTags.map((tag, index) => (
               <div 
                 key={tag.text}
                 className={`absolute animate-float ${
-                  tag.position === 'top-left' ? '-top-4 -left-8' :
-                  tag.position === 'top-right' ? 'top-16 -right-8' :
-                  tag.position === 'bottom-left' ? 'bottom-10 -left-12' : ''
+                  tag.position === 'top-left' ? '-top-2 -left-4 sm:-top-4 sm:-left-8' :
+                  tag.position === 'top-right' ? 'top-8 -right-4 sm:top-16 sm:-right-8' :
+                  tag.position === 'bottom-left' ? 'bottom-6 -left-6 sm:bottom-10 sm:-left-12' : ''
                 }`}
                 style={{
                   animationDelay: `${index * 0.5}s`
                 }}
                 data-tilt-depth="30"
               >
-                <div className={`bg-gradient-to-r ${tag.color} text-white px-4 py-2 rounded-full text-xs font-medium shadow-xl`}>
+                <div className={`bg-gradient-to-r ${tag.color} text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium shadow-xl`}>
                   {tag.text}
                 </div>
               </div>
@@ -114,8 +114,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Fixed Social Media Bar at Bottom */}
-      <div className="fixed bottom-6 left-[70%] -translate-x-[70%] z-50">
+      {/* Fixed Social Media Bar at Bottom - Hidden on mobile */}
+      <div className="hidden lg:block fixed bottom-6 left-[70%] -translate-x-[70%] z-50">
         <div className="flex items-center space-x-4 bg-gray-900/95 backdrop-blur-sm border border-gray-700/50 rounded-2xl px-6 py-4 shadow-2xl">
           {/* Profile Picture */}
           <div className="relative group cursor-pointer">

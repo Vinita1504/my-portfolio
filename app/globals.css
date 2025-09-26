@@ -399,21 +399,6 @@
   }
 }
 
-/* Mobile optimization */
-@media (max-width: 768px) {
-  .fixed {
-    position: static;
-  }
-  
-  .w-80 {
-    width: 100%;
-    height: auto;
-  }
-  
-  .ml-80 {
-    margin-left: 0;
-  }
-}
 
 /* Focus states for accessibility */
 button:focus,

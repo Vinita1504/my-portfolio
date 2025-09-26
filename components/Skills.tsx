@@ -54,17 +54,17 @@ export default function Skills() {
   const column3 = skills.slice(10, 14);
 
   return (
-    <InteractiveBackground className="min-h-screen bg-background py-24 px-8">
+    <InteractiveBackground className="min-h-screen bg-background py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className={`mb-16 transition-all duration-1000 ${
+        <div className={`mb-8 sm:mb-12 lg:mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <div className="flex items-center space-x-3 mb-8">
+          <div className="flex items-center space-x-3 mb-4 sm:mb-6 lg:mb-8">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-sm text-muted-foreground font-medium">Available for work</span>
+            <span className="text-xs sm:text-sm text-muted-foreground font-medium">Available for work</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4">
             How I add value?
           </h2>
         </div>
@@ -73,7 +73,7 @@ export default function Skills() {
         <div className={`transition-all duration-1000 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`} style={{ transitionDelay: '200ms' }}>
-          <Card className="group relative overflow-hidden backdrop-blur-xl bg-gradient-to-br from-gray-900/80 via-gray-800/60 to-gray-900/80 border border-gray-600/30 hover:border-gray-500/40 transition-all duration-500">
+          <Card className="group relative overflow-hidden backdrop-blur-xl bg-gradient-to-br from-gray-900/80 via-gray-800/60 to-gray-900/80  transition-all duration-500">
             {/* Dark Glass Base */}
             <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-800/70 to-gray-900/90" />
             
@@ -93,25 +93,25 @@ export default function Skills() {
             </div>
             
             {/* Content */}
-            <CardContent className="relative p-0 h-80">
-              <div className="flex h-full">
+            <CardContent className="relative p-0 h-[70vh] lg:h-80">
+              <div className="flex flex-col lg:flex-row h-full">
                 {/* Left Side - Title and Description */}
-                <div className="flex-1 p-8 flex flex-col justify-center">
+                <div className="flex-1 p-4 sm:p-6 lg:p-8 flex flex-col justify-center">
                   {/* Icon and Title */}
-                  <div className="flex items-center space-x-4 mb-6">
+                  <div className="flex items-center space-x-3 sm:space-x-4 mb-4 sm:mb-6">
                     <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 bg-green-500 rounded-sm"></div>
-                      <div className="w-2 h-2 bg-green-500 rounded-sm"></div>
+                      <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-sm"></div>
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-sm"></div>
                       <div className="w-1 h-1 bg-green-400 rounded-sm"></div>
                     </div>
-                    <h3 className="text-2xl font-semibold text-white">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-white">
                       Tech Stacks
                     </h3>
                   </div>
 
                   {/* Description */}
                   <div>
-                    <p className="text-gray-400 text-lg leading-relaxed">
+                    <p className="text-gray-400 text-sm sm:text-base lg:text-lg leading-relaxed">
                       My core workflow—<br/>
                       built for thinking,<br/>
                       designing, and building<br/>
@@ -121,27 +121,27 @@ export default function Skills() {
                 </div>
 
                 {/* Right Side - Advanced Bento Grid */}
-                <div className="w-96 h-full relative overflow-hidden bg-gradient-to-br from-gray-800/20 via-gray-700/10 to-gray-800/20 backdrop-blur-sm border-l border-gray-600/20">
+                <div className="w-full lg:w-96 h-full relative overflow-hidden ">
                   {/* Gradient overlay for fade effect */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-900/60 z-10 pointer-events-none"></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-gray-900/60 z-10 pointer-events-none"></div>
+                  {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-900/60 z-10 pointer-events-none"></div> */}
+                  {/* <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-gray-900/60 z-10 pointer-events-none"></div> */}
                   
                   <div className="flex h-full">
                     {/* Column 1 - Frontend (Scroll Up) */}
                     <div className="flex-1 relative overflow-hidden">
-                      <div className="animate-scroll-up-smooth space-y-4 py-4">
+                      <div className="animate-scroll-up-smooth space-y-3 sm:space-y-4 py-3 sm:py-4">
                         {[...column1, ...column1, ...column1].map((skill, index) => (
                           <div 
                             key={`col1-${index}`}
-                            className="group mx-3"
+                            className="group mx-2 sm:mx-3"
                           >
-                            <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 border border-gray-600/30 hover:border-gray-500/50 hover:bg-gray-700/60 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-primary/10">
-                              <div className="flex flex-col items-center text-center space-y-3">
-                                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-700/50 to-gray-800/50 flex items-center justify-center border border-gray-600/30 group-hover:border-gray-500/50 transition-all duration-300">
-                                  <skill.icon className={`w-6 h-6 ${skill.color} group-hover:scale-110 transition-transform duration-300`} />
+                            <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-gray-600/30 hover:border-gray-500/50 hover:bg-gray-700/60 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-primary/10">
+                              <div className="flex flex-col items-center text-center space-y-2 sm:space-y-3">
+                                <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-gray-700/50 to-gray-800/50 flex items-center justify-center border border-gray-600/30 group-hover:border-gray-500/50 transition-all duration-300">
+                                  <skill.icon className={`w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 ${skill.color} group-hover:scale-110 transition-transform duration-300`} />
                                 </div>
                                 <div>
-                                  <p className="text-gray-200 text-sm font-medium group-hover:text-white transition-colors duration-300">
+                                  <p className="text-gray-200 text-xs sm:text-sm font-medium group-hover:text-white transition-colors duration-300">
                                     {skill.name}
                                   </p>
                                 </div>

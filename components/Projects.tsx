@@ -95,38 +95,38 @@ export default function Projects() {
   ];
 
   return (
-    <InteractiveBackground className="min-h-screen bg-background py-24 px-8">
+    <InteractiveBackground className="min-h-screen bg-background py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header Section - Matching the image style */}
-        <div className={`text-center mb-20 transition-all duration-1000 ${
+        <div className={`text-center mb-12 sm:mb-16 lg:mb-20 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <div className="flex items-center justify-center space-x-3 mb-8">
+          <div className="flex items-center justify-center space-x-3 mb-4 sm:mb-6 lg:mb-8">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-sm text-muted-foreground font-medium">Latest work</span>
+            <span className="text-xs sm:text-sm text-muted-foreground font-medium">Latest work</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-4 sm:mb-6">
             Design That Performs
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed px-4">
             A peek into the thinking behind every pixel
           </p>
         </div>
 
         {/* Simple Bento Grid - Image Cards Only */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 auto-rows-auto">
           {projects.map((project, index) => (
             <Card 
               key={project.id}
               className={`group relative overflow-hidden bg-card border border-border hover:border-primary/50 transition-all duration-500 ${
-                project.size === 'landscape' ? 'md:col-span-2 lg:col-span-2 xl:col-span-2' : 
-                project.size === 'portrait' ? 'md:col-span-1 lg:col-span-1 xl:col-span-1 md:row-span-2' :
-                'md:col-span-1 lg:col-span-1 xl:col-span-1'
+                project.size === 'landscape' ? 'col-span-2 lg:col-span-2 xl:col-span-2' : 
+                project.size === 'portrait' ? 'col-span-1 lg:col-span-1 xl:col-span-1 row-span-2' :
+                'sm:col-span-1 lg:col-span-1 xl:col-span-1'
               } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Full Height Image Background */}
-              <div className="relative h-full min-h-[200px] overflow-hidden">
+              <div className="relative h-full min-h-[150px] sm:min-h-[200px] overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
