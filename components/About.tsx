@@ -40,15 +40,9 @@ export default function About() {
               beautiful, functional digital experiences. I specialize in building scalable web applications, 
               mobile apps, and e-commerce platforms with modern technologies and clean, intuitive user interfaces.
             </p>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              I've successfully delivered projects like <strong>dpbazaar.in</strong>, <strong>uidmt.com</strong>, 
-              <strong>hamaraticket.com</strong>, <strong>veliciae</strong> (jewelry e-commerce), and <strong>2gather</strong>. 
-              When I'm not coding, you'll find me exploring new technologies, contributing to 
-              open-source projects, or sharing my knowledge with the developer community.
-            </p>
             
             <div className="flex flex-wrap gap-3 mb-8">
-              {['React', 'Next.js', 'TypeScript', 'Node.js', 'Flutter', 'Dart', 'Python', 'AWS', 'MongoDB', 'PostgreSQL'].map((skill) => (
+              {['React', 'Next.js', 'TypeScript', 'Node.js', 'Flutter', 'Dart', 'AWS', 'MongoDB', 'PostgreSQL'].map((skill) => (
                 <Badge key={skill} variant="secondary" className="bg-secondary text-secondary-foreground hover:bg-primary/20">
                   {skill}
                 </Badge>
@@ -62,7 +56,7 @@ export default function About() {
               {stats.map((stat, index) => {
                 const Icon = stat.icon;
                 return (
-                  <Card key={stat.label} className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 hover:scale-105">
+                  <Card key={stat.label} className="glass-card hover:border-primary/50 transition-all duration-300 hover:scale-105">
                     <CardContent className="p-6 text-center">
                       <Icon className="w-8 h-8 text-primary mx-auto mb-4" />
                       <div className="text-2xl font-bold text-foreground mb-2">{stat.value}</div>

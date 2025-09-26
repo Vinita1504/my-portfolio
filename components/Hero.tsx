@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { Github, Linkedin, Twitter, Instagram, Mail, Download, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Twitter, Instagram, Mail, Download, ExternalLink, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Tilt from 'react-parallax-tilt';
+import InteractiveBackground from '@/components/ui/InteractiveBackground';
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,10 +27,9 @@ export default function Hero() {
   const scale = Math.max(1.0, Math.min(1.5, 1.0 + scrollY * 0.0005));
 
   const socialIcons = [
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/vinita-bharti-07752b315/', label: 'LinkedIn' },
     { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
+    { icon: Github, href: 'https://github.com/Vinita1504', label: 'GitHub' },
   ];
 
   const skillTags = [
@@ -39,16 +39,7 @@ export default function Hero() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-background overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-primary/10"></div>
-      
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
-      </div>
-
+    <InteractiveBackground className="relative min-h-screen overflow-hidden">
       <div className="relative z-10 flex flex-col justify-center items-center min-h-screen px-8">
         {/* Intro Text */}
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -152,7 +143,7 @@ export default function Hero() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-lg bg-gray-800/50 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700/50 transition-all duration-300 hover:scale-110 hover:rotate-3 hover:translate-x-2 hover:shadow-lg hover:shadow-white/20 block"
+                  className="w-10 h-10 rounded-lg bg-gray-800/50 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700/50 transition-all duration-300 hover:scale-110 hover:rotate-3 hover:translate-x-2 hover:shadow-lg hover:shadow-white/20"
                 >
                   <Icon size={18} />
                 </a>
@@ -172,11 +163,11 @@ export default function Hero() {
             </Button>
             {/* Pop out text */}
             <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 whitespace-nowrap">
-              vinita.bharti@email.com
+              vinitabharti1504@gmail.com
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </InteractiveBackground>
   );
 }

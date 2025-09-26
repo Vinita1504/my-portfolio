@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, MapPin, Briefcase } from 'lucide-react';
+import { Calendar, MapPin, Briefcase, Download, ArrowRight, Check } from 'lucide-react';
+import InteractiveBackground from '@/components/ui/InteractiveBackground';
 
 export default function Experience() {
   const [isVisible, setIsVisible] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     // Trigger animation on mount for page-based navigation
@@ -17,146 +18,174 @@ export default function Experience() {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const experiences = [
     {
-      title: 'Senior Full Stack Developer',
-      company: 'TechCorp India',
-      location: 'Mumbai, India',
-      period: '2022 - Present',
-      description: 'Lead development of scalable SaaS platforms serving 100k+ users. Architected microservices infrastructure and mentored junior developers.',
-      technologies: ['React', 'Node.js', 'AWS', 'PostgreSQL'],
+      title: 'Software Developer',
+      company: 'GEETBIH TECH LLP',
+      location: 'Siliguri, India',
+      period: '2025 - Present',
+      description: 'Currently working as a Software Developer, building both web and mobile applications. Developing end-to-end solutions using Next.js for web apps and Flutter for cross-platform mobile applications.',
+      technologies: ['React', 'Next.js', 'Node.js', 'Flutter', 'TypeScript', 'JavaScript'],
     },
     {
       title: 'Frontend Developer',
-      company: 'Digital Solutions Pvt Ltd',
-      location: 'Bangalore, India',
-      period: '2020 - 2022',
-      description: 'Developed responsive web applications and e-commerce solutions. Collaborated with design teams to implement pixel-perfect UIs.',
-      technologies: ['Vue.js', 'TypeScript', 'Tailwind CSS'],
+      company: 'ParivartanX',
+      location: 'Patna, India',
+      period: '2024-2025',
+      description: 'Worked as a Frontend Developer, creating both web and mobile applications. Built responsive web interfaces using Next.js and cross-platform mobile apps using Flutter for seamless user experiences.',
+      technologies: ['React', 'Next.js', 'Flutter', 'JavaScript', 'CSS', 'HTML'],
     },
     {
-      title: 'Web Developer',
-      company: 'StartupHub India',
-      location: 'Delhi, India',
-      period: '2019 - 2020',
-      description: 'Built MVPs for multiple startups. Worked across the full stack from database design to user interface implementation.',
-      technologies: ['React', 'Express', 'MongoDB'],
+      title: 'Flutter Developer',
+      company: 'Chiggos Software Pvt Ltd',
+      location: 'Patna, India',
+      period: '2022 - 2024',
+      description: 'Started as an Intern for 6 months, then promoted to Flutter Developer. Developed both web applications and mobile apps using Flutter, gaining expertise in cross-platform development.',
+      technologies: ['Flutter', 'React', 'Dart', 'Firebase', 'JavaScript'],
     },
   ];
 
   const education = [
     {
-      degree: 'Master of Computer Science',
-      institution: 'Indian Institute of Technology (IIT)',
-      period: '2017 - 2019',
-      description: 'Specialized in Human-Computer Interaction and Software Engineering.',
-    },
-    {
-      degree: 'Bachelor of Computer Engineering',
-      institution: 'University of Mumbai',
-      period: '2013 - 2017',
-      description: 'Graduated with distinction with focus on web technologies and algorithms.',
+      degree: 'Bachelor of Computer Applications (BCA)',
+      institution: 'Indira Gandhi National Open University (IGNOU)',
+      period: '2023 - 2025',
+      description: 'Currently pursuing BCA with focus on computer applications and software development.',
     },
   ];
 
   return (
-    <section className="min-h-screen bg-background py-20 px-8">
-      <div className="max-w-4xl mx-auto">
-        <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Experience & Education</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mb-16"></div>
+    <InteractiveBackground className="min-h-screen py-24 px-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Header Section */}
+        <div className={`text-center mb-16 transition-all duration-1000 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
+          <div className="flex items-center justify-center space-x-3 mb-6">
+            <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+            <span className="text-sm text-accent font-semibold">Professional journey</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Where passion meets <span className="text-primary">expertise</span>
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
+            Building digital experiences that make a difference
+          </p>
         </div>
 
         {/* Experience Section */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-foreground mb-8 flex items-center">
-            <Briefcase className="mr-3 text-primary" size={24} />
-            Professional Experience
-          </h3>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
+          {/* Left Side - For Hiring Managers */}
+          <div className="lg:col-span-1">
+            <div 
+              className="transition-transform duration-300 ease-out"
+              style={{
+                transform: `translateY(${Math.min(scrollY * 0.3, 800)}px)`
+              }}
+            >
+              <div className="text-accent text-sm font-medium mb-3">
+                &lt; For hiring managers &gt;
+              </div>
+              <h3 className="text-2xl font-bold text-accent mb-6">
+                Software Developer with 3+ years of experience
+                <ArrowRight className="inline-block ml-2" size={18} />
+              </h3>
+              <button className="bg-white text-black border border-black rounded-lg px-4 py-2.5 font-medium hover:bg-gray-50 transition-colors flex items-center gap-2 text-sm w-fit">
+                <Download size={14} />
+                Download resume
+              </button>
+            </div>
+          </div>
           
-          <div className="space-y-8">
-            {experiences.map((exp, index) => (
-              <Card 
-                key={exp.company}
-                className={`bg-card/30 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-500 ${
-                  isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
-                }`}
-                style={{ transitionDelay: `${index * 200}ms` }}
-              >
-                <CardContent className="p-8">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                    <div>
-                      <h4 className="text-xl font-bold text-foreground mb-2">{exp.title}</h4>
-                      <div className="flex items-center text-primary mb-2">
-                        <span className="font-semibold">{exp.company}</span>
+          {/* Right Side - Experience Entries */}
+          <div className="lg:col-span-2">
+            
+            <div className="space-y-8">
+              {experiences.map((exp, index) => (
+                <div 
+                  key={exp.company}
+                  className={`transition-all duration-500 ${
+                    isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+                  }`}
+                  style={{ transitionDelay: `${index * 200}ms` }}
+                >
+                  <div className="flex items-start gap-4">
+                    {/* Company Icon */}
+                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white font-bold text-lg">
+                        {exp.company.charAt(0)}
+                      </span>
+                    </div>
+                    
+                    <div className="flex-1">
+                      <div className="mb-2">
+                        <h4 className="text-xl font-bold text-foreground mb-1">{exp.title}</h4>
+                        <p className="text-lg text-primary font-semibold">{exp.company}</p>
+                        <p className="text-sm text-muted-foreground">{exp.period}</p>
                       </div>
-                      <div className="flex items-center text-muted-foreground mb-4">
-                        <MapPin size={16} className="mr-2" />
-                        <span className="mr-4">{exp.location}</span>
-                        <Calendar size={16} className="mr-2" />
-                        <span>{exp.period}</span>
-                      </div>
+                      
+                      <p className="text-muted-foreground mb-3 leading-relaxed text-sm">{exp.description}</p>
+                      
+                      {/* <div className="flex flex-wrap gap-2">
+                        {exp.technologies.map((tech) => (
+                          <Badge 
+                            key={tech} 
+                            variant="secondary" 
+                            className="bg-secondary text-secondary-foreground hover:bg-primary/20 px-2 py-1 text-xs"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div> */}
                     </div>
                   </div>
-                  
-                  <p className="text-muted-foreground mb-4 leading-relaxed">{exp.description}</p>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {exp.technologies.map((tech) => (
-                      <Badge 
-                        key={tech} 
-                        variant="secondary" 
-                        className="bg-secondary text-secondary-foreground hover:bg-primary/20"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Education Section */}
-        <div>
-          <h3 className="text-2xl font-bold text-foreground mb-8 flex items-center">
-            <svg className="mr-3 text-primary" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6L23 9l-11-6zM5 13.18l7 3.82 7-3.82V11L12 15 5 11v2.18z"/>
-            </svg>
-            Education
-          </h3>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {/* Left Side - Heading */}
+          <div className="lg:col-span-1">
+            <h3 className="text-2xl font-bold text-accent leading-tight">
+              And here's what I<br />
+              studied →
+            </h3>
+          </div>
           
-          <div className="space-y-6">
-            {education.map((edu, index) => (
-              <Card 
-                key={edu.institution}
-                className={`bg-card/30 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-500 ${
-                  isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
-                }`}
-                style={{ transitionDelay: `${(index + 3) * 200}ms` }}
-              >
-                <CardContent className="p-8">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                    <div>
-                      <h4 className="text-xl font-bold text-foreground mb-2">{edu.degree}</h4>
-                      <div className="flex items-center text-primary mb-2">
-                        <span className="font-semibold">{edu.institution}</span>
-                      </div>
-                      <div className="flex items-center text-muted-foreground mb-4">
-                        <Calendar size={16} className="mr-2" />
-                        <span>{edu.period}</span>
-                      </div>
-                    </div>
+          {/* Right Side - Education Entries */}
+          <div className="lg:col-span-2">
+            <div className="space-y-8">
+              {education.map((edu, index) => (
+                <div 
+                  key={edu.institution}
+                  className={`transition-all duration-500 ${
+                    isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+                  }`}
+                  style={{ transitionDelay: `${(index + 3) * 200}ms` }}
+                >
+                  <div>
+                    <h4 className="text-xl font-bold text-foreground mb-2">{edu.institution}</h4>
+                    <p className="text-sm text-muted-foreground mb-1">{edu.degree}</p>
+                    <p className="text-sm text-muted-foreground">{edu.period}</p>
                   </div>
-                  
-                  <p className="text-muted-foreground leading-relaxed">{edu.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </InteractiveBackground>
   );
 }

@@ -40,27 +40,26 @@ export default function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@vinitabharti.dev',
-      href: 'mailto:hello@vinitabharti.dev',
+      value: 'vinitabharti1504@gmail.com',
+      href: 'mailto:vinitabharti1504@gmail.com',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+91 (987) 654-3210',
-      href: 'tel:+919876543210',
+      value: '+91 9572703604',
+      href: 'tel:+919572703604',
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Mumbai, India',
-      href: '#',
+      value: 'Bihar, India',
+      href: 'https://maps.app.goo.gl/U5i2cUY1vY3zVjTz9',
     },
   ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+    { icon: Github, href: 'https://github.com/Vinita1504', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/vinita-bharti-07752b315/', label: 'LinkedIn' },
   ];
 
   return (

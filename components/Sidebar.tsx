@@ -35,10 +35,10 @@ export default function Sidebar({ activeSection }: SidebarProps) {
         {/* Profile Section */}
         <div className="text-center mb-8 relative">
           {/* Theme Toggle - Top Right */}
-          <div className="absolute top-0 right-0">
+          {/* <div className="absolute top-0 right-0">
             <ThemeToggle />
           </div>
-          
+           */}
           <div className="relative w-24 h-24 mx-auto mb-4">
             <Image
               src="/vinita.jpeg"
@@ -48,8 +48,10 @@ export default function Sidebar({ activeSection }: SidebarProps) {
             />
             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 to-accent/20"></div>
           </div>
-          <h2 className="text-xl font-bold text-foreground mb-2">ViNiTa BhArTi</h2>
-          <p className="text-muted-foreground text-sm">Full Stack Developer | SaaS Builder</p>
+          <h2 className="text-2xl font-bold text-foreground mb-2">Vinita Bharti</h2>
+          <p className="text-muted-foreground text-sm mb-1">@vinitabharti1504 . 📍 India</p>
+          <p className="text-foreground text-sm font-medium">Software Developer</p>
+          <p className="text-muted-foreground text-xs mt-1">3+ Years Experience</p>
         </div>
 
         {/* Navigation */}
@@ -81,7 +83,7 @@ export default function Sidebar({ activeSection }: SidebarProps) {
         {/* Social Icons */}
         <div className="flex justify-center space-x-4 pt-8 border-t border-border">
           <a
-            href="https://github.com"
+            href="https://github.com/Vinita1504"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-xl bg-muted text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-all duration-300 hover:scale-110"
@@ -89,7 +91,7 @@ export default function Sidebar({ activeSection }: SidebarProps) {
             <Github size={20} />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/vinita-bharti-07752b315/"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-xl bg-muted text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-all duration-300 hover:scale-110"
@@ -97,7 +99,7 @@ export default function Sidebar({ activeSection }: SidebarProps) {
             <Linkedin size={20} />
           </a>
           <a
-            href="mailto:contact@example.com"
+            href="mailto:vinitabharti1504@gmail.com"
             className="p-3 rounded-xl bg-muted text-muted-foreground hover:text-foreground hover:bg-tertiary/20 transition-all duration-300 hover:scale-110"
           >
             <Mail size={20} />

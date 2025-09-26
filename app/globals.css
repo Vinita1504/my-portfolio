@@ -258,12 +258,133 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Enhanced Glassmorphism */
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.glass-skill {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Glass reflection effect */
+.glass-reflection {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    transparent 50%, 
+    rgba(255, 255, 255, 0.05) 100%);
+}
+
+/* Cursor light effect */
+.cursor-light {
+  background: radial-gradient(circle, 
+    rgba(255, 255, 255, 0.2) 0%, 
+    rgba(255, 255, 255, 0.1) 30%, 
+    transparent 70%);
+}
+
+/* Auto-scroll animations for bento grid */
+@keyframes scroll-up-smooth {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scroll-down-smooth {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-scroll-up-smooth {
+  animation: scroll-up-smooth 30s ease-in-out infinite;
+}
+
+.animate-scroll-down-smooth {
+  animation: scroll-down-smooth 25s ease-in-out infinite;
+}
+
+/* Pause animation on hover for better UX */
+.animate-scroll-up-smooth:hover,
+.animate-scroll-down-smooth:hover {
+  animation-play-state: paused;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 /* Gradient text */
 .gradient-text {
   background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Radial gradients for mesh background */
+.bg-gradient-radial {
+  background: radial-gradient(ellipse at center, var(--tw-gradient-stops));
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Interactive Grid Effects */
+@keyframes grid-pulse {
+  0%, 100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.grid-interactive {
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: grid-pulse 4s ease-in-out infinite;
+}
+
+.grid-hover:hover {
+  background-image: 
+    linear-gradient(hsl(var(--primary) / 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--primary) / 0.4) 1px, transparent 1px);
+  transition: all 0.3s ease;
+}
+
+/* Enhanced grid pattern */
+.opacity-8 {
+  opacity: 0.15;
 }
 
 /* Custom button hover effects */
