@@ -23,7 +23,7 @@ export default function Projects() {
     {
       id: 1,
       title: '2gather App',
-      image: '/projects/2gather-app.png',
+      image: '/images/2gather-app.png',
       category: 'App',
       github: 'https://github.com',
       demo: 'https://2gather.in',
@@ -32,7 +32,7 @@ export default function Projects() {
     {
       id: 2,
       title: 'Hamara Ticket',
-      image: '/projects/hamara-ticket.png',
+      image: '/images/hamara-ticket.png',
       category: 'App',
       github: 'https://github.com',
       demo: 'https://hamaraticket.com',
@@ -41,7 +41,7 @@ export default function Projects() {
     {
       id: 3,
       title: 'UIDMT',
-      image: '/projects/uidmt.png',
+      image: '/images/uidmt.png',
       category: 'Website',
       github: 'https://github.com',
       demo: 'https://uidmt.com',
@@ -50,7 +50,7 @@ export default function Projects() {
     {
       id: 4,
       title: 'Parivartanx',
-      image: '/projects/parivartanx.png',
+      image: '/images/parivartanx.png',
       category: 'Website',
       github: 'https://github.com',
       demo: 'https://parivartanx.com',
@@ -59,7 +59,7 @@ export default function Projects() {
     {
       id: 5,
       title: '2gather.in',
-      image: '/projects/2gather-web.png',
+      image: '/images/2gather-web.png',
       category: 'Website',
       github: 'https://github.com',
       demo: 'https://2gather.in',
@@ -68,7 +68,7 @@ export default function Projects() {
     {
       id: 6,
       title: 'Veliciae',
-      image: '/projects/veliciae.png',
+      image: '/images/veliciae.png',
       category: 'E-commerce',
       github: 'https://github.com',
       demo: 'https://www.veliciae.in/',
@@ -77,7 +77,7 @@ export default function Projects() {
     {
       id: 7,
       title: 'DRS Solar',
-      image: '/projects/drs-solar.png',
+      image: '/images/drs-solar.png',
       category: 'Website',
       github: 'https://github.com',
       demo: 'https://www.drssolar.com/',
@@ -86,7 +86,7 @@ export default function Projects() {
     {
       id: 8,
       title: 'Maurya Urja Matrimony',
-      image: '/projects/matrimony.png',
+      image: '/images/matrimony.png',
       category: 'App',
       github: 'https://github.com',
       demo: 'https://www.mauryaurjamatrimony.com/',
@@ -131,6 +131,7 @@ export default function Projects() {
                   src={project.image}
                   alt={project.title}
                   fill
+                  priority
                   sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                   className={`${project.size=== 'portrait'?"object-cover":"object-cover aspect-square"} group-hover:scale-105 transition-transform duration-500`}
                 />
