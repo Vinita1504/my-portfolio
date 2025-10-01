@@ -23,7 +23,7 @@ export default function Projects() {
     {
       id: 1,
       title: '2gather App',
-      image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/projects/2gather-app.png',
       category: 'App',
       github: 'https://github.com',
       demo: 'https://2gather.in',
@@ -32,7 +32,7 @@ export default function Projects() {
     {
       id: 2,
       title: 'Hamara Ticket',
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/projects/hamara-ticket.png',
       category: 'App',
       github: 'https://github.com',
       demo: 'https://hamaraticket.com',
@@ -41,16 +41,16 @@ export default function Projects() {
     {
       id: 3,
       title: 'UIDMT',
-      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/projects/uidmt.png',
       category: 'Website',
       github: 'https://github.com',
-      demo: 'https://uidmt.edu',
+      demo: 'https://uidmt.com',
       size: 'square'
     },
     {
       id: 4,
       title: 'Parivartanx',
-      image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/projects/parivartanx.png',
       category: 'Website',
       github: 'https://github.com',
       demo: 'https://parivartanx.com',
@@ -59,7 +59,7 @@ export default function Projects() {
     {
       id: 5,
       title: '2gather.in',
-      image: 'https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/projects/2gather-web.png',
       category: 'Website',
       github: 'https://github.com',
       demo: 'https://2gather.in',
@@ -68,28 +68,28 @@ export default function Projects() {
     {
       id: 6,
       title: 'Veliciae',
-      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/projects/veliciae.png',
       category: 'E-commerce',
       github: 'https://github.com',
-      demo: 'https://veliciae.com',
+      demo: 'https://www.veliciae.in/',
       size: 'portrait'
     },
     {
       id: 7,
       title: 'DRS Solar',
-      image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/projects/drs-solar.png',
       category: 'Website',
       github: 'https://github.com',
-      demo: 'https://drssolar.com',
+      demo: 'https://www.drssolar.com/',
       size: 'square'
     },
     {
       id: 8,
-      title: 'Maurya Urja',
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
+      title: 'Maurya Urja Matrimony',
+      image: '/projects/matrimony.png',
       category: 'App',
       github: 'https://github.com',
-      demo: 'https://mauryaurja.com',
+      demo: 'https://www.mauryaurjamatrimony.com/',
       size: 'landscape'
     },
   ];
@@ -131,7 +131,7 @@ export default function Projects() {
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className={`${project.size=== 'portrait'?"object-cover":"object-cover aspect-square"} group-hover:scale-105 transition-transform duration-500`}
                 />
                 
                 {/* Blackish Gradient Overlay */}
