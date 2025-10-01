@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Github, Smartphone, Globe, Heart, Sun, Users, Building, MoreHorizontal } from 'lucide-react';
@@ -23,7 +23,7 @@ export default function Projects() {
     {
       id: 1,
       title: '2gather App',
-      image: '/images/2gather-app.png',
+      image: '/2gather-app.png',
       category: 'App',
       github: 'https://github.com',
       demo: 'https://2gather.in',
@@ -32,7 +32,7 @@ export default function Projects() {
     {
       id: 2,
       title: 'Hamara Ticket',
-      image: '/images/hamara-ticket.png',
+      image: '/hamara-ticket.png',
       category: 'App',
       github: 'https://github.com',
       demo: 'https://hamaraticket.com',
@@ -41,7 +41,7 @@ export default function Projects() {
     {
       id: 3,
       title: 'UIDMT',
-      image: '/images/uidmt.png',
+      image: '/uidmt.png',
       category: 'Website',
       github: 'https://github.com',
       demo: 'https://uidmt.com',
@@ -50,7 +50,7 @@ export default function Projects() {
     {
       id: 4,
       title: 'Parivartanx',
-      image: '/images/parivartanx.png',
+      image: '/parivartanx.png',
       category: 'Website',
       github: 'https://github.com',
       demo: 'https://parivartanx.com',
@@ -59,7 +59,7 @@ export default function Projects() {
     {
       id: 5,
       title: '2gather.in',
-      image: '/images/2gather-web.png',
+      image: '/2gather-web.png',
       category: 'Website',
       github: 'https://github.com',
       demo: 'https://2gather.in',
@@ -68,7 +68,7 @@ export default function Projects() {
     {
       id: 6,
       title: 'Veliciae',
-      image: '/images/veliciae.png',
+      image: '/veliciae.png',
       category: 'E-commerce',
       github: 'https://github.com',
       demo: 'https://www.veliciae.in/',
@@ -77,7 +77,7 @@ export default function Projects() {
     {
       id: 7,
       title: 'DRS Solar',
-      image: '/images/drs-solar.png',
+      image: '/drs-solar.png',
       category: 'Website',
       github: 'https://github.com',
       demo: 'https://www.drssolar.com/',
@@ -86,7 +86,7 @@ export default function Projects() {
     {
       id: 8,
       title: 'Maurya Urja Matrimony',
-      image: '/images/matrimony.png',
+      image: '/matrimony.png',
       category: 'App',
       github: 'https://github.com',
       demo: 'https://www.mauryaurjamatrimony.com/',
@@ -133,7 +133,7 @@ export default function Projects() {
                   fill
                   priority
                   sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                  className={`${project.size=== 'portrait'?"object-cover":"object-cover aspect-square"} group-hover:scale-105 transition-transform duration-500`}
+                  className={`object-cover group-hover:scale-105 transition-transform duration-500`}
                 />
                 
                 {/* Blackish Gradient Overlay */}
