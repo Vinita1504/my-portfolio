@@ -131,6 +131,7 @@ export default function Projects() {
                   src={project.image}
                   alt={project.title}
                   fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                   className={`${project.size=== 'portrait'?"object-cover":"object-cover aspect-square"} group-hover:scale-105 transition-transform duration-500`}
                 />
                 
