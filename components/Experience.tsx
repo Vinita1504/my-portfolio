@@ -58,7 +58,7 @@ export default function Experience() {
     {
       degree: 'Bachelor of Computer Applications (BCA)',
       institution: 'Indira Gandhi National Open University (IGNOU)',
-      period: '2023 - 2025',
+      period: '2022 - 2025',
       description: 'Currently pursuing BCA with focus on computer applications and software development.',
     },
   ];
@@ -99,7 +99,17 @@ export default function Experience() {
                 Software Developer with 3+ years of experience
                 <ArrowRight className="inline-block ml-2" size={18} />
               </h3>
-              <button className="bg-white text-black border border-black rounded-lg px-4 py-2.5 font-medium hover:bg-gray-50 transition-colors flex items-center gap-2 text-sm w-fit">
+              <button 
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/vinita_updated_resume.pdf';
+                  link.download = 'Vinita_Resume.pdf';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+                className="bg-white text-black border border-black rounded-lg px-4 py-2.5 font-medium hover:bg-gray-50 transition-colors flex items-center gap-2 text-sm w-fit"
+              >
                 <Download size={14} />
                 Download resume
               </button>

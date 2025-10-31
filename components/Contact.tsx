@@ -82,7 +82,7 @@ export default function Contact() {
           >
             <CardContent className="p-4 sm:p-6 lg:p-8">
               <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Send Message</h3>
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <form action={"https://getform.io/f/ajjrgzva"}  method="POST"  className="space-y-4 sm:space-y-6">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <Input
